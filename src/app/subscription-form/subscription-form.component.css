@@ -1,0 +1,31 @@
+@media(min-width: 320px) {
+    .sub-body {
+        padding: 30px;
+    }
+
+    .card {
+        /* background-color: var(--secondary-color); */
+        background: linear-gradient(to right, #16a34a, #059669, #0d9488);
+        width: 1200px;
+    }
+
+    input[type=text],
+    input[type=email] {
+        width: 100%;
+    }
+
+    .subs-text {
+        width: 250px
+    }
+}
+
+
+@media(min-width: 768px) {
+    .sub-body {
+        padding: 0;
+    }
+
+    .subs-text {
+        width: 500px;
+    }
+}

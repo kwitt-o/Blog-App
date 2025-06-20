@@ -1,0 +1,28 @@
+@media(min-width: 320px) {
+    .featured-section {
+        padding: 0;
+        background-color: #d6f1e6;
+    }
+}
+
+@media(min-width: 768px) {
+    .featured-section {
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-bottom: 50px;
+    }
+}
+
+@media(min-width: 1024px) {
+    .featured-section {
+        padding-left: 40px;
+        padding-right: 30px;
+        padding-bottom: 50px;
+    }
+}
+
+.featured-card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

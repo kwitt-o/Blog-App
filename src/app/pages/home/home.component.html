@@ -1,0 +1,32 @@
+<section class="featured-section">
+
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-md-12 text-center mt-5">
+                <h2 class="gradient-text"> FEATURED POSTS </h2>
+                <p class="text-gray"> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel, officiis!</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 col-lg-3 mb-3 featured-card" *ngFor="let featuredPost of featuredPosts">
+                <app-post-card [postData]="featuredPost"></app-post-card>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<section class="container mt-5">
+    <div class="col-md-12 text-center">
+        <h2 class="gradient-text">LATEST POSTS</h2>
+        <p class="text-gray">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 mt-3 featured-card" *ngFor="let latestPost of latestPosts">
+            <app-post-card [postData]="latestPost"></app-post-card>
+        </div>
+    </div>
+</section>
