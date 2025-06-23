@@ -20,7 +20,7 @@ export class PostsService {
 
   loadLatestPosts() {
     const postsRef = collection(this.firestore, 'posts');
-    const latestPostsQuery = query(postsRef, orderBy('createdAt'));
+    const latestPostsQuery = query(postsRef, orderBy('createdAt', 'desc'));
     return collectionData(latestPostsQuery, { idField: 'id' });
   }
 
