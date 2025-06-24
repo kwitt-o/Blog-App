@@ -4,3 +4,8 @@ footer{
     background-color: var(--navbar-footer-color);
 }
 
+.logo{
+    width: 100px;
+}
+
+

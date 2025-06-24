@@ -1,19 +1,104 @@
-<header class="navbar navbar-expand-lg fixed-top glass-card">
+<!-- <header class="navbar navbar-expand-lg fixed-top glass-card">
     <div class="container justify-content-start col-md-3">
-        <a routerLink="/" class="site-logo">BLOOM</a>
+        <img class="logo" src="images/logo-blog-dark.png" alt="logo" routerLink="/">
     </div>
 
-    <div class="container col-md-6">
+    <div class="container col-md-6" id="header">
         <div class="collapse navbar-collapse justify-content-center">
-            <ul class="navbar-nav">
+            <ul class="navbar-nav" id="sideMenu">
                 <li class="nav-item ml-3"><a class="nav-link" routerLink="/"> Home</a></li>
                 <li class="nav-item ml-3"><a class="nav-link" routerLink="/about"> About Us</a></li>
                 <li class="nav-item ml-3"><a class="nav-link" routerLink="/terms-and-conditions"> Terms & Conditions</a></li>
+                <i class="fa-solid fa-xmark"></i>
             </ul>
+            <i class="fa-solid fa-bars"></i>
         </div>
     </div>
 
     <div class="col-md-3">
 
     </div>
+</header> -->
+
+
+<header class="navbar navbar-expand-lg fixed-top glass-card">
+    <div class="container-fluid">
+
+
+        <div>
+            <img class="logo" src="images/logo-blog-dark.png" alt="logo" routerLink="/">
+        </div>
+
+
+        <ul class="navbar-nav d-none d-lg-flex justify-content-center mx-auto">
+            <li class="nav-item"><a class="nav-link" routerLink="/">Home</a></li>
+
+
+            <li class="nav-item dropdown-custom">
+                <a class="nav-link d-flex align-items-center">
+                    Categories
+                    <i class="fa-solid fa-chevron-down dropdown-icon ml-1"></i>
+                </a>
+
+                <ul class="dropdown-menu-custom">
+                    <li *ngFor="let category of categories">
+                        <a class="dropdown-item" [routerLink]="['/category', category.category, category.id]">
+                            {{ category.category }}
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+
+            <li class="nav-item ml-3"><a class="nav-link" routerLink="/about">About Us</a></li>
+            <li class="nav-item ml-3"><a class="nav-link" routerLink="/terms-and-conditions">Terms & Conditions</a></li>
+        </ul>
+
+
+        <button class="navbar-toggler d-lg-none border-0" type="button" (click)="toggleMenu()">
+            <!-- <i class="fa-solid" [ngClass]="isMenuOpen ? 'fa-xmark' : 'fa-bars'"></i> -->
+
+            <span class="menu-icon" [class.open]="isMenuOpen">
+                <i class="fa-solid" [ngClass]="isMenuOpen ? 'fa-xmark' : 'fa-bars'"></i>
+            </span>
+        </button>
+
+    </div>
+
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" [ngClass]="{ 'open': isMenuOpen }">
+        <ul class="navbar-nav text-start mt-4">
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/" (click)="closeMenu()">Home</a>
+            </li>
+
+            <!-- Categories dropdown -->
+            <li class="nav-item">
+                <a class="nav-link d-flex justify-content-between align-items-center" (click)="toggleMobileDropdown()">
+                    Categories
+                    <i class="fa-solid" [ngClass]="isMobileDropdownOpen ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+                </a>
+
+                <!-- Dropdown shown only when toggled -->
+                <ul class="mobile-dropdown" *ngIf="isMobileDropdownOpen">
+                    <li *ngFor="let category of categories">
+                        <a class="dropdown-item ps-4" [routerLink]="['/category', category.category, category.id]"
+                            (click)="closeMenu()">
+                            {{ category.category }}
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/about" (click)="closeMenu()">About Us</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/terms-and-conditions" (click)="closeMenu()">Terms & Conditions</a>
+            </li>
+        </ul>
+    </div>
+
 </header>
