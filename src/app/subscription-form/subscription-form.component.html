@@ -5,7 +5,8 @@
                 <div class="text-center mt-3">
                     <h3 class="text-white">SUBSCRIPTION FORM</h3>
                     <p class="m-auto subs-text text-white">
-                         Kindly subscribe to receive the latest posts, updates, and exclusive content directly in your inbox. No
+                        Kindly subscribe to receive the latest posts, updates, and exclusive content directly in your
+                        inbox. No
                         spam—just value.
                     </p>
 
@@ -19,6 +20,7 @@
 
                     <form class="form-inline mt-3" #subForm='ngForm' (ngSubmit)="onSubmit(subForm.value)"
                         *ngIf="!isSubscribed">
+
                         <div class="form-group col-md-5 mb-3">
                             <input type="text" class="form-control" placeholder="Your Name" #Name="ngModel" name="name"
                                 ngModel required [ngClass]="{'is-invalid': Name.touched && Name.invalid}">
@@ -27,6 +29,7 @@
                                 <div *ngIf="Name.errors?.['required']">Name is Required</div>
                             </div>
                         </div>
+
                         <div class="form-group col-md-5 mb-3">
                             <input type="email" class="form-control" placeholder="Email Address" #Email="ngModel"
                                 name="email" ngModel required email

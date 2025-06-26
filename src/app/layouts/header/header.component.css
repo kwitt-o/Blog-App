@@ -6,30 +6,23 @@ header {
     width: 140px;
 }
 
-/* Prevent logo shifting */
-header.navbar {
-    z-index: 1000;
-}
-
-/* Slide-in mobile menu */
 .mobile-menu {
+    background-color: var(--secondary-color);
     position: fixed;
     top: 0;
     right: -100%;
     height: 100vh;
-    background: rgba(255, 255, 255, 0.95);
     box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
-    transition: right 0.3s ease;
-    padding: 4rem 2rem;
+    transition: right 0.4s ease;
+    padding: 3rem 3rem;
     z-index: 1100;
 }
 
-/* Show menu when open */
+
 .mobile-menu.open {
     right: 0;
 }
 
-/* Mobile nav items */
 .mobile-menu .nav-link {
     padding: 1rem 0;
     font-size: 1.0rem;
@@ -43,7 +36,6 @@ header.navbar {
 .navbar-toggler i {
     font-size: 1.5rem;
     color: #333;
-    /* or white if your menu background is dark */
 }
 
 .menu-icon {
@@ -51,13 +43,9 @@ header.navbar {
     transition: transform 0.3s ease, rotate 0.3s ease;
 }
 
-/* Optional effect when opening (scale and rotate) */
 .menu-icon.open {
     transform: rotate(90deg) scale(1.2);
 }
-
-
-
 
 
 
@@ -102,7 +90,6 @@ header.navbar {
     color: var(--primary-color);
     text-decoration: none;
     transition: background 0.2s;
-    /* text-transform: uppercase; */
     font-size: 16px;
 }
 
@@ -110,42 +97,14 @@ header.navbar {
     background-color: #f8f9fa;
 }
 
-/* Optional: style the arrow icon */
 .dropdown-icon {
     font-size: 0.8rem;
     margin-left: 4px;
     transition: transform 0.3s ease;
 }
 
-/* Optional: rotate the icon slightly on hover */
 .dropdown-custom:hover .dropdown-icon {
     transform: rotate(180deg);
-}
-
-
-
-
-/* Mobile menu wrapper (you may already have this class) */
-.mobile-menu {
-    background-color: var(--secondary-color);
-    padding: 1rem;
-    transition: max-height 0.3s ease;
-    z-index: 1000;
-
-
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    transition: max-height 0.4s ease, opacity 0.4s ease, transform 0.4s ease;
-    transform: translateY(-10px);
-}
-
-/* Mobile menu transition */
-.mobile-menu.open {
-    max-height: 500px;
-    /* or adjust based on content */
-    opacity: 1;
-    transform: translateY(0);
 }
 
 
@@ -159,14 +118,13 @@ header.navbar {
     background-color: #f8f9fa;
 }
 
-/* Optional: dropdown items inside mobile */
+/* Dropdown items inside mobile */
 .mobile-dropdown a {
     display: block;
     padding: 6px 12px;
     font-size: 0.95rem;
     color: var(--primary-color);
     text-decoration: none;
-    /* text-transform: uppercase; */
 }
 
 .mobile-dropdown a:hover {

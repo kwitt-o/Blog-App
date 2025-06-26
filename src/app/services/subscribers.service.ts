@@ -14,7 +14,7 @@ export class SubscribersService {
     const subRef = collection(this.firestore, 'subscribers');
 
     addDoc(subRef, subData).then(() => {
-      console.log('Subscriber Saved Succcessfully');
+      // console.log('Subscriber Saved Succcessfully');
     })
   }
 

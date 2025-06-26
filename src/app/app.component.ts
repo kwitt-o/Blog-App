@@ -8,7 +8,7 @@ import { ScrollService } from './services/scroll.service';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HeaderComponent, CategoryNavbarComponent, FooterComponent, SubscriptionFormComponent],
+  imports: [RouterOutlet, HeaderComponent, FooterComponent, SubscriptionFormComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

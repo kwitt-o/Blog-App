@@ -1,4 +1,8 @@
-.comment-box{
-    padding: 15px 35px;
-    background-color: #F0F0F0;
+.comment-box {
+    padding: 10px 35px;
+    background-color: var(--secondary-color);
+}
+
+h4 {
+    font-size: 22px;
 }

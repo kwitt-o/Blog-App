@@ -57,6 +57,10 @@ input[type=email] {
     width: 100%;
 }
 
+.message{
+    font-size: 12px;
+}
+
 .btn-theme {
     height: 58px;
     border: none;
