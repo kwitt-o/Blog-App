@@ -5,7 +5,6 @@ import { CommentListComponent } from '../../comments/comment-list/comment-list.c
 import { PostsService } from '../../services/posts.service';
 import { ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { CategoryNavbarComponent } from '../../layouts/category-navbar/category-navbar.component';
 
 @Component({
   selector: 'app-single-post',
@@ -33,8 +32,9 @@ export class SinglePostComponent implements OnInit {
   }
 
   loadSimilarPosts(catId: string) {
-    this.postService.loadSimilarPosts(catId).subscribe(val => {
-      this.similarPosts = val;
+    this.postService.loadSimilarPosts(catId).subscribe(posts => {
+      // this.similarPosts = val;
+      this.similarPosts = posts.filter(post => post.id !== this.postData.id);
     })
   }
 

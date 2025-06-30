@@ -10,20 +10,31 @@ import { CommonModule } from '@angular/common';
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-export class HomeComponent implements OnInit{
+export class HomeComponent implements OnInit {
   featuredPosts: any[] = [];
   latestPosts: any[] = [];
 
   private postService = inject(PostsService);
 
-    ngOnInit() {
-    this.postService.loadFeaturedData().subscribe(data => {
-      this.featuredPosts = data;
-    })
+  ngOnInit() {
+    // this.postService.loadFeaturedData().subscribe(data => {
+    //   this.featuredPosts = data;
+    // })
 
-    this.postService.loadLatestPosts().subscribe(data => {
-      this.latestPosts = data;
-    })
+    // this.postService.loadLatestPosts().subscribe(data => {
+    //   this.latestPosts = data;
+    // })
+
+    this.postService.loadFeaturedData().subscribe(featuredData => {
+      this.featuredPosts = featuredData;
+
+      const featuredIds = this.featuredPosts.map(post => post.id);
+
+      this.postService.loadLatestPosts().subscribe(latestData => {
+        // Filter out posts already in featured
+        this.latestPosts = latestData.filter(post => !featuredIds.includes(post.id));
+      });
+    });
   }
 
 }
