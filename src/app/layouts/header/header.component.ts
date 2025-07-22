@@ -33,12 +33,12 @@ export class HeaderComponent {
 
   closeMenu() {
     this.isMenuOpen = false;
-     this.isMobileDropdownOpen = false;
+    this.isMobileDropdownOpen = false;
   }
 
   toggleMobileDropdown() {
-  this.isMobileDropdownOpen = !this.isMobileDropdownOpen;
-}
+    this.isMobileDropdownOpen = !this.isMobileDropdownOpen;
+  }
 
 
 }

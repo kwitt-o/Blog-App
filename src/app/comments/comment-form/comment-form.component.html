@@ -6,7 +6,7 @@
         <form #commentForm="ngForm" (ngSubmit)="onSubmit(commentForm)">
 
             <div class="form-group">
-                <label for=""> Name </label>
+                <label for=""> Name <span class="required">*</span> </label>
                 <input type="text" class="form-control shadow-effect" placeholder="Enter your name here" name="name"
                     #Name="ngModel" ngModel required [ngClass]="{'is-invalid': Name.touched && Name.invalid}">
 
@@ -16,13 +16,13 @@
             </div>
 
             <div class="form-group">
-                <label> Comment</label>
-                <textarea rows="3" cols="10" class="form-control shadow-effect" placeholder="Add your comment here"
+                <label> Comment <span class="required">*</span></label>
+                <textarea rows="3" cols="10" class="form-control shadow-effect" placeholder="Your comment goes here – share away!"
                     name="comment" #Comment="ngModel" ngModel required
                     [ngClass]="{'is-invalid': Comment.touched && Comment.invalid}"></textarea>
 
                 <div class="alert alert-danger" *ngIf="Comment.touched && Comment.invalid">
-                    <div class="message" *ngIf="Comment.errors?.['required']"> Comment field cannot be empty </div>
+                    <div class="message" *ngIf="Comment.errors?.['required']"> Oops! Looks like you forgot to type your comment </div>
                 </div>
             </div>
 

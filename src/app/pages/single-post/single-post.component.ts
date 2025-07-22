@@ -33,7 +33,6 @@ export class SinglePostComponent implements OnInit {
 
   loadSimilarPosts(catId: string) {
     this.postService.loadSimilarPosts(catId).subscribe(posts => {
-      // this.similarPosts = val;
       this.similarPosts = posts.filter(post => post.id !== this.postData.id);
     })
   }
